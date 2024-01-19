@@ -1,0 +1,59 @@
+:root {
+    --interact: #b54ae4;
+    --btn-text: #ffffff;
+    --btn-color: #321a73;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 30px;
+    font-size: 22px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    line-height: 1.5;
+}
+#highScores {
+    color: var(--interact)
+}
+#highScores:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#blank {
+    height: 70px;
+}
+
+
+.container {
+    text-align: center;
+    margin-left: 19%;
+    margin-right: 19%;
+    line-height: 1.5;
+}
+h1 {
+    font-weight: bolder;
+}
+.space {
+    padding-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--interact);
+    color: var(--btn-text);
+    padding: 17px;
+}
