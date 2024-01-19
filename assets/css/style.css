@@ -36,9 +36,8 @@ body {
     margin-right: 19%;
     line-height: 1.5;
 }
-h1 {
-    font-weight: bolder;
-}
+
+
 .space {
     padding-bottom: 30px;
 }
@@ -56,4 +55,35 @@ h1 {
     background-color: var(--interact);
     color: var(--btn-text);
     padding: 17px;
+}
+
+.containerQ {
+    font-size: 25px;
+    margin-left: 24%;
+    margin-right: 24%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+}
+.btnQ {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 80%;
+    text-align: start;
+}
+.btnQ:hover {
+    cursor: pointer;
+    background-color: var(--interact);
+    color: var(--btn-text);
+    padding: 12px;
+}
+.spaceQ {
+    padding-bottom: 10px;
+}
+.marginQ {
+    margin-right: 60%;
 }

@@ -7,14 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Reset Typography */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-weight: inherit;
-}
-
 /* Reset Lists */
 ul, ol {
   list-style: none;
@@ -33,9 +25,7 @@ textarea,
 select {
   margin: 0;
   padding: 0;
-  font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
 }
 
 /* Reset Images */
