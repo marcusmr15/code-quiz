@@ -14,13 +14,9 @@
 </head>
 
 <body>
-    <header>
-        <!-- Header content goes here -->
-    </header>
-    
     <nav class="navbar">
         <div id="highScores">View high scores</div>
-        <div id="timer">Time: 0</div>
+        <div id="countdown">Time: 0</div>
     </nav>
 
     <div id="blank"></div>
@@ -35,72 +31,20 @@
         <button class="btn space">Start Quiz</button>
     </div>
 
-    <div class="containerQ">
+    <div class="containerQ hide">
         <div class="spaceQ">
-            <h2>Commonly used data types DO Not Include:</h2>
+            <h2>Question</h2>
         </div>
-        <button class="btnQ marginQ">1. strings</button>
+        <button class="btnQ marginQ">Answer 1</button>
         <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">2. booleans</button>
+        <button class="btnQ marginQ">Answer 2</button>
         <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">3. alerts</button>
+        <button class="btnQ marginQ">Answer 3</button>
         <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">4. numbers</button>
+        <button class="btnQ marginQ">Answer 4</button>
     </div>
 
-    <div class="containerQ">
-        <div class="spaceQ">
-            <h2>The condition in an if / else statement is enclosed with <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>.</h2>
-        </div>
-        <button class="btnQ marginQ">1. quotes</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">2. curly brackets</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">3. parenthesis</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">4. square brackets</button>
-    </div>
-
-    <div class="containerQ">
-        <div class="spaceQ">
-            <h2>Arrays in JavaScript can be used to store <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>.</h2>
-        </div>
-        <button class="btnQ marginQ">1. numbers and strings</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">2. other arrays</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">3. booleans</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">4. all of the above</button>
-    </div>
-
-    <div class="containerQ">
-        <div class="spaceQ">
-            <h2>String values must be enclosed within <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> when being assigned to variables.</h2>
-        </div>
-        <button class="btnQ marginQ">1. commas</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">2. curly brackets</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">3. quotes</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">4. parenthesis</button>
-    </div>
-
-    <div class="containerQ">
-        <div class="spaceQ">
-            <h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>
-        </div>
-        <button class="btnQ marginQ">1. JavaScript</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">2. terminal/bash</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">3. <em>for</em> loops</button>
-        <div class="spaceQ marginQ"></div>
-        <button class="btnQ marginQ">4. console.log</button>
-    </div>
-
-    <div id="containerResults">
+    <div class="containerResults hide">
         <div class="spaceQ"><h2>All done!</h2></div>
         <section id="scoreResults">
             <div>Your final score is</div>
@@ -108,7 +52,7 @@
             <div id="finalScore">0</div>
         </section>
         <section id="initials">
-            <div>Enter your initials: </div>
+            <div>Enter initials: </div>
             <div class="spaceInitials"></div>
             <input type="text" placeholder="e.g., MV for Melanie Valdes"></input>
             <div class="spaceInitials"></div>
@@ -116,13 +60,29 @@
         </section>
     </div>
 
-    <div id="answerStatus">
-        <p id="correct">Correct!</p>
-        <p id="wrong">Wrong!</p>
+    <div class="answerStatus hide">
+        <p>Correct!</p>
+    </div>
+
+    <div class="answerStatus hide">
+        <p>Wrong!</p>
+    </div>
+
+    <div class="containerHS hide">
+        <div class="spaceQ"><h2>High Scores</h2></div>
+        <div class="HSListElement">Score 1</div>
+        <div class="HSListElement">Score 2</div>
+        <div class="HSListElement">Score 3</div>
+        <div class="HSListElement">Score 4</div>
+        <div class="spaceQ"></div>
+        <section>
+            <button class="btnHS goBack">Go back</button>
+            <button class="btnHS clearHS">Clear high scores</button>
+        </section>
     </div>
 
     
-    <!-- <script src="./assets/script.js"></script> -->
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>

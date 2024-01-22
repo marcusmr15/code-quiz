@@ -3,6 +3,7 @@
     --btn-text: #ffffff;
     --btn-color: #321a73;
     --answer--status: #707071;
+    --hs-color: #b29cf0;
 }
 
 body {
@@ -67,7 +68,6 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    display: none;
 }
 .btnQ {
     background-color: var(--btn-color);
@@ -98,16 +98,16 @@ body {
 }
 
 
-#containerResults {
+.containerResults {
     margin-left: 24%;
     margin-right: 24%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    display: none;
 }
 #scoreResults {
     display: flex;
+    margin-bottom: 10px;
 }
 .spaceResults {
     width: 10px;
@@ -155,7 +155,7 @@ input::placeholder::after {
     transform: scale(0.97);
 }
 
-#answerStatus {
+.answerStatus {
     margin-left: 24%;
     margin-right: 24%;
     margin-top: 50px;
@@ -164,6 +164,47 @@ input::placeholder::after {
     color: var(--answer--status);
     font-style: italic;
     font-size: 1.5em;
+}
+
+.containerHS {
+    margin-left: 24%;
+    margin-right: 24%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.HSListElement {
+    background-color: var(--hs-color);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.btnHS {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 85%;
+    text-align: start;
+    transition: transform 0.1s;
+}
+.btnHS:hover {
+    cursor: pointer;
+    background-color: var(--interact);
+    color: var(--btn-text);
+    padding: 11px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+.btnHS:active {
+    transform: scale(0.97);
+}
+
+.hide {
     display: none;
 }
 
