@@ -97,6 +97,64 @@ body {
     margin-right: 60%;
 }
 
+
+#containerResults {
+    margin-left: 24%;
+    margin-right: 24%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+}
+#scoreResults {
+    display: flex;
+}
+.spaceResults {
+    width: 10px;
+}
+
+#initials {
+    display: flex;
+    align-items: center;  
+}
+.spaceInitials {
+    width: 20px;
+}
+input::placeholder {
+    font-style: italic;  
+    font-size: 90%;
+}
+input {
+    width: 60%;
+}
+input::placeholder::after {
+    font-style: var(--btn-text);
+}
+
+#btnInitials {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 85%;
+    text-align: start;
+    transition: transform 0.1s;
+}
+#btnInitials:hover {
+    cursor: pointer;
+    background-color: var(--interact);
+    color: var(--btn-text);
+    padding: 11px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+#btnInitials:active {
+    transform: scale(0.97);
+}
+
 #answerStatus {
     margin-left: 24%;
     margin-right: 24%;
