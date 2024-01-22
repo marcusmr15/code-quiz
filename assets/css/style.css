@@ -2,14 +2,14 @@
     --interact: #b54ae4;
     --btn-text: #ffffff;
     --btn-color: #321a73;
+    --answer--status: #707071;
 }
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
     padding: 30px;
-    font-size: 22px;
+    font-size: 25px;
 }
-
 
 .navbar {
     display: flex;
@@ -18,17 +18,20 @@ body {
     line-height: 1.5;
 }
 #highScores {
-    color: var(--interact)
+    color: var(--interact);
+    transition: transform 0.1s;
 }
 #highScores:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+#highScores:active {
+    transform: scale(0.95);
+}
 
 #blank {
     height: 70px;
 }
-
 
 .container {
     text-align: center;
@@ -36,7 +39,6 @@ body {
     margin-right: 19%;
     line-height: 1.5;
 }
-
 
 .space {
     padding-bottom: 30px;
@@ -48,17 +50,18 @@ body {
     padding: 15px;
     border-radius: 10px;
     border: none;
-    
+    transition: transform 0.2s;
 }
 .btn:hover {
     cursor: pointer;
     background-color: var(--interact);
-    color: var(--btn-text);
-    padding: 17px;
+    padding: 18px;
+}
+.btn:active {
+    transform: scale(0.85);
 }
 
 .containerQ {
-    font-size: 25px;
     margin-left: 24%;
     margin-right: 24%;
     display: flex;
@@ -74,16 +77,40 @@ body {
     border: none;
     font-size: 80%;
     text-align: start;
+    transition: transform 0.1s;
 }
 .btnQ:hover {
     cursor: pointer;
     background-color: var(--interact);
     color: var(--btn-text);
-    padding: 12px;
+    padding: 11px;
 }
+.btnQ:active {
+    transform: scale(0.97);
+}
+
 .spaceQ {
     padding-bottom: 10px;
 }
+
 .marginQ {
     margin-right: 60%;
 }
+
+#answerStatus {
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 50px;
+    padding: 10px;
+    border-top: 1px solid var(--answer--status);
+    color: var(--answer--status);
+    font-style: italic;
+    font-size: 1.5em;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+  }
