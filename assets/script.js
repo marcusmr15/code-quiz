@@ -28,7 +28,7 @@ var correctAnswer = document.querySelector('.answerCorrect');
 var wrongAnswer = document.querySelector('.answerWrong');
 
 function questionValues1() {
-  title.innerHTML = 'Commonly used data types DO Not include:';
+  title.innerHTML = 'I. Commonly used data types DO Not include:';
   first.innerHTML = '1. strings';
   second.innerHTML = '2. booleans';
   third.innerHTML = '3. alerts';
@@ -37,63 +37,169 @@ function questionValues1() {
   first.addEventListener('click', function() {
     wrongAnswer.classList.remove('hide')    
     questionValues2();
+    startTime -= 10;
+    countdown.innerHTML = 'Time: ' + startTime;
   });
-
-  second.addEventListener('click', questionValues2);
-  third.addEventListener('click', questionValues2);
-  forth.addEventListener('click', questionValues2);
+  second.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')    
+    questionValues2();
+    startTime -= 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  third.addEventListener('click', function() { //correct!
+    correctAnswer.classList.remove('hide')    
+    questionValues2();
+  });
+  forth.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')    
+    questionValues2();
+    startTime -= 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
 }
 
 function questionValues2() {
-  title.innerHTML = '2';
-  first.innerHTML = '1. gg';
-  second.innerHTML = '2. gg';
-  third.innerHTML = '3. gg';
-  forth.innerHTML = '4. gg';
+  title.innerHTML = 'II. The condition in an if / else statement is enclosed with ________.';
+  first.innerHTML = '1. parenthesis';
+  second.innerHTML = '2. curly brackets';
+  third.innerHTML = '3. quotes';
+  forth.innerHTML = '4. square brackets';
 
-  first.addEventListener('click', questionValues3);
-  second.addEventListener('click', questionValues3);
-  third.addEventListener('click', questionValues3);
-  forth.addEventListener('click', questionValues3);
+  first.addEventListener('click', function() { //correct!
+    wrongAnswer.classList.add('hide')
+    correctAnswer.classList.remove('hide')      
+    questionValues3();
+    startTime += 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  second.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')      
+    questionValues3();
+  });
+  third.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')   
+    questionValues3();
+    startTime -= 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  forth.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')    
+    questionValues3();
+  });
 }
 
 function questionValues3() {
-  title.innerHTML = '3';
-  first.innerHTML = '1. qq';
-  second.innerHTML = '2. qq';
-  third.innerHTML = '3. qq';
-  forth.innerHTML = '4. qq';
+  title.innerHTML = 'III. Arrays in JavaScript can be used to store _________.';
+  first.innerHTML = '1. numbers and strings';
+  second.innerHTML = '2. other arrays';
+  third.innerHTML = '3. booleans';
+  forth.innerHTML = '4. all of the above';
 
-  first.addEventListener('click', questionValues4);
-  second.addEventListener('click', questionValues4);
-  third.addEventListener('click', questionValues4);
-  forth.addEventListener('click', questionValues4);
+  first.addEventListener('click', function() { 
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')      
+    questionValues4();
+    startTime -= 20;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  second.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')      
+    questionValues4();
+  });
+  third.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')   
+    questionValues4();
+    startTime += 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  forth.addEventListener('click', function() { //correct!
+    wrongAnswer.classList.add('hide')
+    correctAnswer.classList.remove('hide')    
+    questionValues4();
+    startTime += 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
 }
 
 function questionValues4() {
-  title.innerHTML = '4';
-  first.innerHTML = '1. ww';
-  second.innerHTML = '2. ww';
-  third.innerHTML = '3. ww';
-  forth.innerHTML = '4. ww';
+  title.innerHTML = 'IV. String values must be enclosed within ________ when being assigned to variables.';
+  first.innerHTML = '1. commas';
+  second.innerHTML = '2. curly brackets';
+  third.innerHTML = '3. quotes';
+  forth.innerHTML = '4. parenthesis';
 
-  first.addEventListener('click', questionValues5);
-  second.addEventListener('click', questionValues5);
-  third.addEventListener('click', questionValues5);
-  forth.addEventListener('click', questionValues5);
+  first.addEventListener('click', function() { 
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')    
+    questionValues5();
+    startTime += 30;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  second.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')      
+    questionValues5();
+  });
+  third.addEventListener('click', function() { //correct!
+    wrongAnswer.classList.add('hide')
+    correctAnswer.classList.remove('hide')   
+    questionValues5();
+  });
+  forth.addEventListener('click', function() { 
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')    
+    questionValues5();
+    startTime -= 30;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
 }
 
 function questionValues5() {
-  title.innerHTML = '5';
-  first.innerHTML = '1. hh';
-  second.innerHTML = '2. hh';
-  third.innerHTML = '3. hh';
-  forth.innerHTML = '4. hh';
+  title.innerHTML = 'V. A very useful tool used during development and debugging for printing content to the debugger is:';
+  first.innerHTML = '1. JavaScript';
+  second.innerHTML = '2. terminal/bash';
+  third.innerHTML = '3. for loops';
+  forth.innerHTML = '4. console.log';
 
-  first.addEventListener('click', results);
-  second.addEventListener('click', results);
-  third.addEventListener('click', results);
-  forth.addEventListener('click', results);
+  questionBtns.forEach(questionBtn => {
+    questionBtn.addEventListener('click', pauseCountdown) 
+  })
+
+  first.addEventListener('click', function() { 
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')    
+    results();
+    startTime -= 30;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  second.addEventListener('click', function() {
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')      
+    results();
+    startTime += 10;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  third.addEventListener('click', function() { 
+    wrongAnswer.classList.remove('hide')
+    correctAnswer.classList.add('hide')   
+    results();
+    startTime -= 20;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
+  forth.addEventListener('click', function() { //correct!
+    wrongAnswer.classList.add('hide')
+    correctAnswer.classList.remove('hide')    
+    results();
+    clearInterval(timer);
+    countdown.innerHTML = 'Time: ' + startTime;
+    startTime += 70;
+    countdown.innerHTML = 'Time: ' + startTime;
+  });
 }
 
 var startTime = '';
@@ -113,21 +219,31 @@ function countdownStart() {
       console.log('Countdown finished');   
       quizQuestions.classList.add('hide')
       quizResults.classList.remove('hide') 
-
+    //} else if (startTime <= 10) {
+      //countdown.style.color = 'red';
+      //countdown.innerHTML = 'Time: ' + startTime;
     } else {
       countdown.innerHTML = 'Time: ' + startTime;
     }
   }, 1000);
 }
 
+function pauseCountdown() {
+  clearInterval(timer);
+  console.log('Countdown paused');
+  pausedTime = startTime;
+}
 
 /*questionBtns.forEach(questionBtn => {
     questionBtn.addEventListener('click', results)
 })*/
 
+var finalScoreResult = document.querySelector('#finalScore');
+
 function results() {
     quizQuestions.classList.add('hide')
     quizResults.classList.remove('hide')
+    finalScoreResult.innerHTML = startTime;
 }
 
 highScoreBtn.addEventListener('click', viewHighScores)
