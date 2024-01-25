@@ -295,8 +295,6 @@ function handleFirstAnswer5() {
     countdownPause();
     removeEventListeners();
     results();
-    //startTime -= penaltyTime;
-    //countdown.innerHTML = 'Time: ' + startTime;
   }
 }
 
@@ -307,8 +305,6 @@ function handleSecondAnswer5() {
     countdownPause();
     removeEventListeners();
     results();
-    //startTime -= penaltyTime;
-    //countdown.innerHTML = 'Time: ' + startTime;
   }
 }
 
@@ -319,8 +315,6 @@ function handleThirdAnswer5() {
     countdownPause();
     removeEventListeners();
     results();
-    //startTime -= penaltyTime;
-    //countdown.innerHTML = 'Time: ' + startTime;
   }
 }
 
@@ -365,10 +359,10 @@ function results() {
   quizQuestions.classList.add('hide')
   quizResults.classList.remove('hide')
   finalScoreResult.innerHTML = startTime;
+  console.log(startTime)
 }
 
 var finalScoreResult = document.querySelector('#finalScore');
-//var submitBtn =document.querySelector('.'); 
 
 highScoreBtn.addEventListener('click', viewHighScores)
 
@@ -379,11 +373,36 @@ function viewHighScores() {
     highScoreLists.classList.remove('hide')
     wrongAnswer.classList.add('hide')
     correctAnswer.classList.add('hide') 
-    countdownReset();
-    countdown.innerHTML = 'Time: 0';
+    countdownPause();
+    countdown.innerHTML = '';
 }
- 
 
+var inputInitials = document.querySelector('.inputInitials');
+var submitBtn = document.querySelector('#btnInitials')
+var listInitials = document.querySelector('.HSListElement');
+
+var noHSYet = document.querySelector('.noHSYet');
+
+submitBtn.addEventListener('click', function(){
+  viewHighScores();
+  var message = inputInitials.value;
+  var listItem = document.createElement('li');
+  listItem.textContent = message + ' - ' + startTime;
+  listInitials.appendChild(listItem);
+  inputInitials.value = '';
+  console.log(startTime);
+})
+ 
+var clearHSBtn = document.querySelector('.clearHS');
+
+clearHSBtn.addEventListener('click', clearHighScoresList)
+
+function clearHighScoresList () {
+  while (listInitials.firstChild) {
+    listInitials.removeChild(listInitials.firstChild);
+  }
+}
+  
 var goBackBtn = document.querySelector('.goBack')
 var clearHS = document.querySelector('.clearHS') // not yet in use
 
@@ -391,7 +410,6 @@ goBackBtn.addEventListener('click', goBackToStart)
 
 function goBackToStart() {
   startBtn.classList.remove('hide')
-  //quizQuestions.classList.add('hide')
   quizResults.classList.add('hide')    
   highScoreLists.classList.add('hide')
   countdownReset();
